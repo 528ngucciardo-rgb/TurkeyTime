@@ -22,31 +22,68 @@ html, body {
 }
 
 /* step 1: build body */
+
 .body {
-   background: var(--brown1);
-   color: var(--brown1);
    width: 40%;
    height: 40%;
+   background: var(--brown1);
+   color: var(--brown1);
    border-radius: 50%;  
    top: 40%;
    left: 50%;
-   transform: translate(-50%,0);
+   transform: translate(-50%, 0);
    box-shadow:
    -4vmin 14.5vmin 0 -13vmin,
-   4vmin 14.5vmin 0 -13vmin;
+   4vmin 14.5vmin 0 -13vmin
 }
 
-.wings {
+.wing {
     background: var(--brown2);
     height: 30%;
     width: 20%;
     border-radius: 100% 0% 100% 5%;
     transform-origin: top right;
-    translate: rotate(-10deg);
+    top: 41%;
+    left: 23%;
+    transform: rotate(-10deg);
 }
 
-.wings + .wings {
+.wing + .wing {
     left: auto;
     right: 43%;
-    transform: scaleX(-1) rotate(10deg);
+    transform: scaleX(-1) rotate(-10deg);
 }
+
+.head {
+    height: 19%;
+    width: 19%;
+    top: 15%;
+    left: 50%;
+    border-radius: 50%;
+    background: var(--brown2);
+    transform: translate(-50%, 0);
+    clip-path: polygon(0% 20%, 100% 20%, 100% 500%, 0% 500%);
+}
+
+.head::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 120%;
+    width: 40%;
+    background: var(--brown2);
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 0 0 100% 100% / 30%;
+}
+
+.eye {
+    width: 3%;
+    height: 3%;
+    background: black;
+    border-radius: 50%;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0) translate(-2.5vmin, 0);
+    box-shadow: 5vmin 0;
